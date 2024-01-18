@@ -13,11 +13,11 @@ def generate_stamp_card(stamp_count):
     #font = ImageFont.truetype("arial.ttf", 30)
 
     # Set position for stamp count text
-    text_position = (150, 50)
+    text_position = (150, 60)
 
     # Set stamp image and position
     stamp_image_path = "res/stamp.png"
-    stamp_position = (50, 150)
+    stamp_position = (70, 40)
 
     # Draw stamp count text on the image
     #draw.text(text_position, f"Stamps: {stamp_count}", font=font, fill="black")
@@ -30,7 +30,7 @@ def generate_stamp_card(stamp_count):
         base_image.paste(stamp, stamp_position, stamp)
 
         # Update stamp position for the next stamp
-        stamp_position = (stamp_position[0] + 60, stamp_position[1])
+        stamp_position = (stamp_position[0] + 70, stamp_position[1])
 
     # Save the modified image
     base_image.save("updated_stampCard.png")
