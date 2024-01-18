@@ -6,27 +6,17 @@ def generate_stamp_card(stamp_count):
     base_image_path = "res/stampCard.png"
     base_image = Image.open(base_image_path)
 
-    # Create a drawing object
-    draw = ImageDraw.Draw(base_image)
-
-    # Set font and size for stamp count text
-    #font = ImageFont.truetype("arial.ttf", 30)
-
-    # Set position for stamp count text
-    text_position = (150, 60)
-
     # Set stamp image and position
     stamp_image_path = "res/stamp.png"
     stamp_position = (70, 40)
 
-    # Draw stamp count text on the image
-    #draw.text(text_position, f"Stamps: {stamp_count}", font=font, fill="black")
-
     # Add stamps to the image based on the stamp count
     stamp = Image.open(stamp_image_path).convert("RGBA")
     
-    for _ in range(stamp_count):
+    for i in range(stamp_count):
         
+        if i == 5:
+            stamp_position = (70, 100)
         base_image.paste(stamp, stamp_position, stamp)
 
         # Update stamp position for the next stamp
@@ -36,5 +26,5 @@ def generate_stamp_card(stamp_count):
     base_image.save("updated_stampCard.png")
 
 # Example: Update stamp count based on a variable
-current_stamp_count = 1
+current_stamp_count = 8
 generate_stamp_card(current_stamp_count)
