@@ -2,6 +2,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 def generate_stamp_card(stamp_count):
     # Load the base stamp card image
+    #res = Image.new("RGBA", (220, 220), (255, 255, 255))
     base_image_path = "res/stampCard.png"
     base_image = Image.open(base_image_path)
 
@@ -9,7 +10,7 @@ def generate_stamp_card(stamp_count):
     draw = ImageDraw.Draw(base_image)
 
     # Set font and size for stamp count text
-    font = ImageFont.truetype("arial.ttf", 30)
+    #font = ImageFont.truetype("arial.ttf", 30)
 
     # Set position for stamp count text
     text_position = (150, 50)
@@ -19,11 +20,13 @@ def generate_stamp_card(stamp_count):
     stamp_position = (50, 150)
 
     # Draw stamp count text on the image
-    draw.text(text_position, f"Stamps: {stamp_count}", font=font, fill="black")
+    #draw.text(text_position, f"Stamps: {stamp_count}", font=font, fill="black")
 
     # Add stamps to the image based on the stamp count
+    stamp = Image.open(stamp_image_path).convert("RGBA")
+    
     for _ in range(stamp_count):
-        stamp = Image.open(stamp_image_path)
+        
         base_image.paste(stamp, stamp_position, stamp)
 
         # Update stamp position for the next stamp
