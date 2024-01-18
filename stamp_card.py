@@ -36,5 +36,5 @@ def generate_stamp_card(stamp_count):
     base_image.save("updated_stampCard.png")
 
 # Example: Update stamp count based on a variable
-current_stamp_count = 3
+current_stamp_count = 1
 generate_stamp_card(current_stamp_count)
