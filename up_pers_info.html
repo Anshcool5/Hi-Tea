@@ -66,21 +66,18 @@
 
     <section>
         <h1>Update Personal Information</h1>
-        <form action="/update" method="post">
+        <form action="insert.php" method="post">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
 
-            <label for="age">Age:</label>
-            <input type="number" id="age" name="age" required>
-
-            <label for="location">Location:</label>
-            <input type="text" id="location" name="location" required>
+            <label for="postalCode">Pincode:</label>
+            <input class="zipcode" type="text" id="postalCode" name="postalCode" pattern="[A-Za-z]\d[A-Za-z] ?\d[A-Za-z]\d" required>
 
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
 
             <label for="phone">Phone:</label>
-            <input type="tel" id="phone" name="phone" required>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
 
             <!-- Add more input fields as needed -->
 
