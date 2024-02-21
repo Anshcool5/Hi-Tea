@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update Personal Information</title>
+    <script src="script.js"></script>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -66,7 +67,7 @@
 
     <section>
         <h1>Update Personal Information</h1>
-        <form action="insert.php" method="post">
+        <form name="myForm" id="myForm" action="insert.php" method="post">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
 
@@ -81,10 +82,10 @@
 
             <!-- Add more input fields as needed -->
 
-            <button type="submit">Update Information</button>
+            <button id = "sub" type="submit">Update Information</button>
         </form>
     </section>
-
+<p id="jsonText"></p>
 </body>
 
 </html>
